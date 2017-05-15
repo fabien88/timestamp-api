@@ -8,6 +8,7 @@
     "heroku-postbuild": "npm run build",
     "build": "next build",
     "start": "node server.js",
+    "deploy": "now -e NODE_ENV=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

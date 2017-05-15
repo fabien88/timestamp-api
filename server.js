@@ -1,8 +1,7 @@
 const { parseReq } = require('./api.js');
 const express = require('express')
 const next = require('next')
-const dev = false; //process.env.NODE_ENV !== 'production'
-const port = process.env.PORT || dev ? 8080 : 3000;
+const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -18,8 +17,8 @@ app.prepare()
     res.send(JSON.stringify(parseReq(req)));
   })
 
-  server.listen(port, (err) => {
+  server.listen(8080, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:'+port)
+    console.log('> Ready on http://localhost:8080')
   })
 })
