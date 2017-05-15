@@ -18,8 +18,8 @@ app.prepare()
     res.send(JSON.stringify(parseReq(req)));
   })
 
-  server.listen(8080, (err) => {
+  server.listen(dev ? 8080 : 3000, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:8080')
+    console.log('> Ready on http://localhost:'+dev? 8080 : 3000)
   })
 })
